@@ -1,3 +1,6 @@
+student_count = 9
+
+# first we print the list of students
 puts "The students of my cohort at Makers Academy"
 puts "--------------"
 puts "Roi Driscoll"
@@ -19,3 +22,8 @@ puts "Sasha Cooper"
 puts "Nicolai DTH"
 puts "Nadav Matalon"
 puts "Fitsum Teklehaimanot"
+#finally, we print the total
+
+#its important that print() doesnt add new line characters
+print student_count
+puts " great students"
