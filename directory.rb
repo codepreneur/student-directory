@@ -1,35 +1,44 @@
 students = [
-	"Roi Driscoll",
-	 "James Whyte",
-	 "Margherita Serino",
-	 "Vaidas Mykolaitis",
-	 "Johann Bornman",
-	 "Kate Hamilton",
-	 "James Keap",
-	 "Nic Yeeles",
-	 "Julie Walker",
-	 "Will Allen",
-	 "Julia Tan",
-	 "Federico Maffei",
-	 "Jamie Patel",
-	 "Faezrah Rizalman",
-	 "Josh Fail-Broon",
-	 "Sasha Cooper",
-	 "Nicolai DTH",
-	 "Nadav Matalon",
-	 "Fitsum Teklehaimanot"
+	 {:name => "Roi Driscoll", :cohort => :november},
+	 {:name => "James Whyte", :cohort => :november},
+	 {:name => "Margherita Serino", :cohort => :november},
+	 {:name => "Vaidas Mykolaitis", :cohort => :november},
+	 {:name => "Johann Bornman", :cohort => :november},
+	 {:name => "Kate Hamilton", :cohort => :november},
+	 {:name => "James Keap", :cohort => :november},
+	 {:name => "Nic Yeeles", :cohort => :november},
+	 {:name => "Julie Walker", :cohort => :november},
+	 {:name => "Will Allen", :cohort => :november},
+	 {:name => "Julia Tan", :cohort => :november},
+	 {:name => "Federico Maffei", :cohort => :november},
+	 {:name => "Jamie Patel", :cohort => :november},
+	 {:name => "Faezrah Rizalman", :cohort => :november},
+	 {:name => "Josh Fail-Broon", :cohort => :november},
+	 {:name => "Sasha Cooper", :cohort => :november},
+	 {:name => "Nicolai DTH", :cohort => :november},
+	 {:name => "Nadav Matalon", :cohort => :november},
+	 {:name => "Fitsum Teklehaimanot", :cohort => :november}
 	 ]
+
+def print_header
+	puts "The students of my cohort at Makers Academy"
+	puts "--------------"
+end	 
 
 
 # first we print the list of students
-puts "The students of my cohort at Makers Academy"
-puts "--------------"
-students.each do |student|
-	puts student
+def print(students)
+	students.each do |student|
+		puts "#{student[:name]} (#{student[:cohort]} cohort)"
+	end
 end
 
-#finally, we print the total
+def print_footer(names)
+	puts "Overall, we have #{names.length} great students"
+end
 
-#its important that print() doesnt add new line characters
 
-puts "Overall, we have #{students.length} great students"
+print_header
+print(students)
+print_footer(students)
+
