@@ -104,14 +104,14 @@ describe 'student directory' do
 		end
 
 
-		it '3 to save inputed students to file' do
+		it '3 to save changes (adding/editing/deleting students) to file' do
 			
 			@dir.import({name:'Nic',cohort:'may',year:2014})
 			allow(@reader).to receive(:call).and_return('3')
 			expect(@dir.interact_with_menu()).to eq [{name:'Nic',cohort:'may',year:2014}]
 		end
 
-		it '4 to list students from a file' do
+		it '4 to load array from csv file' do
 			
 			students = @dir.import({name:'Nic',cohort:'may',year:2014})
 			@dir.save_students_to('students.csv',@dir.students)
@@ -150,7 +150,7 @@ describe 'student directory' do
 			allow(@reader).to receive(:call).and_return('9')
 			expect{@dir.interact_with_menu()}.to raise_error SystemExit
 		end
-		
+
 	end
 
 end
