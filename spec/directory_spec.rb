@@ -36,4 +36,21 @@ describe 'student directory' do
 	end
 
 
+	context 'saving data' do
+
+		it 'saves a student to file' do
+			
+			expect(CSV).to receive(:open).with('students.csv','wb')
+			@dir.save_students_to('students.csv',@dir.students)
+		end
+
+		it 'saves to row' do
+			
+			student = {name: "Nic", cohort: "May", year: 2014}
+			expect(@dir.save_to_row([],student)).to eq [["Nic","May",2014]]
+		end
+
+	end
+
+
 end

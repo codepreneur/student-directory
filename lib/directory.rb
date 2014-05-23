@@ -32,6 +32,16 @@ class StudentDirectory
 		}
 	end
 
+	def save_students_to(file, students)
+		CSV.open(file,'wb') do |csv|
+			students.each{|student| save_to_row(csv,student)}
+		end
+	end
+
+	def save_to_row(row,student)
+		row << student.values
+	end
+
 
 
 end
