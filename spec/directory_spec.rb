@@ -53,4 +53,20 @@ describe 'student directory' do
 	end
 
 
+	context 'listing/displaying students' do
+
+		it 'displays students' do
+			
+			students = [{name:'Nic',cohort:'may',year:2014},{name:'Paul',cohort:'may',year:2014}]
+
+			expect(@writer).to receive(:call).with("Nic from may cohort in 2014\nPaul from may cohort in 2014")
+
+			@dir.list_students(students)
+		end
+
+	end
+
+	
+
+
 end

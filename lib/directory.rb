@@ -42,6 +42,10 @@ class StudentDirectory
 		row << student.values
 	end
 
+	def list_students(students)
+		@writer.call students.map{|student| "#{student[:name]} from #{student[:cohort]} cohort in #{student[:year]}" }.join("\n")
+	end
+
 
 
 end
